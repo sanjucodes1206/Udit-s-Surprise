@@ -1,11 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Photo Test 💖</title>
+  <meta charset="UTF-8">
+  <title>Happy Boyfriend Day 💖</title>
+  <style>
+    body {
+      background-color: #e0f7ff; /* lighter baby blue */
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 60px;
+      color: #ff4da6;
+      margin-top: 30px;
+      text-shadow: 2px 2px #fff;
+    }
+    h2 {
+      color: #ff3385;
+      margin-top: 50px;
+      font-size: 35px;
+    }
+    p {
+      font-size: 20px;
+      color: #333;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px;
+    }
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    #surpriseBtn {
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 22px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 40px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    #surpriseBtn:hover {
+      background-color: #ff3385;
+    }
+    #surprisePic {
+      margin-top: 20px;
+      display: none;
+    }
+    #surprisePic img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      animation: pop 0.8s;
+    }
+    @keyframes pop {
+      from {transform: scale(0.5); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
+    }
+    /* floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: #ff4da6;
+      font-size: 25px;
+      animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+      from {transform: translateY(0) scale(1); opacity: 1;}
+      to {transform: translateY(-100vh) scale(1.5); opacity: 0;}
+    }
+  </style>
 </head>
-<body style="background-color: lightblue; text-align: center; font-family: Arial;">
-  <h1>HAPPY BOYFRIEND DAY 💕</h1>
-  <p>Here’s our first uploaded photo:</p>
-  <img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/IMG_0518.JPG" alt="Test Photo" style="width:300px; border-radius:20px;">
+<body>
+
+  <h1>HAPPY BOYFRIEND DAY 💖</h1>
+
+  <!-- Section 1 -->
+  <h2>Our Cute Dates 💗</h2>
+  <div class="gallery">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 1">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 2">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 3">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 4">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 5">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 6">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 7">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 8">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 9">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Date 10">
+  </div>
+
+  <!-- Section 2 -->
+  <h2>My Pookilicious 😋</h2>
+  <div class="gallery">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 1">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 2">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 3">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 4">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 5">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 6">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 7">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 8">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 9">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 10">
+  </div>
+
+  <!-- Section 3 -->
+  <h2>Rasathiii 🥰</h2>
+  <div class="gallery">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 1">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 2">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 3">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 4">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 5">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 6">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 7">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 8">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 9">
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 10">
+  </div>
+
+  <!-- Surprise Button -->
+  <button id="surpriseBtn">Click me for a surprise 💌</button>
+  <div id="surprisePic"></div>
+
+  <script>
+    // floating hearts generator
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (20 + Math.random() * 30) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 800);
+
+    // surprise button logic
+    const surprisePics = [
+      "YOUR_RANDOM_IMAGE_1",
+      "YOUR_RANDOM_IMAGE_2",
+      "YOUR_RANDOM_IMAGE_3",
+      "YOUR_RANDOM_IMAGE_4",
+      "YOUR_RANDOM_IMAGE_5",
+      "YOUR_RANDOM_IMAGE_6",
+      "YOUR_RANDOM_IMAGE_7",
+      "YOUR_RANDOM_IMAGE_8",
+      "YOUR_RANDOM_IMAGE_9",
+      "YOUR_RANDOM_IMAGE_10",
+      // add all 30 random photo links here
+    ];
+
+    const btn = document.getElementById("surpriseBtn");
+    const surpriseDiv = document.getElementById("surprisePic");
+
+    btn.addEventListener("click", () => {
+      const randomPic = surprisePics[Math.floor(Math.random() * surprisePics.length)];
+      surpriseDiv.innerHTML = `<img src="${randomPic}" alt="Surprise">`;
+      surpriseDiv.style.display = "block";
+    });
+  </script>
+
 </body>
 </html>
