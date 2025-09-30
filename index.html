@@ -3,27 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy Boyfriend Day 💖</title>
+  <!-- Google Font for fun techy look -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #e0f7ff;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(120deg, #c0f0ff, #e0f7ff);
+      font-family: 'Press Start 2P', cursive;
       text-align: center;
-      padding-top: 50px;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
     }
-    h1 { font-size: 60px; color: #ff4da6; text-shadow: 2px 2px #fff; }
-    p { font-size: 24px; color: #333; margin: 20px 0; }
+
+    h1 {
+      font-size: 50px;
+      color: #ff4da6;
+      text-shadow: 2px 2px #fff;
+      margin-top: 80px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin: 20px 0;
+    }
+
     a {
       display: block;
       margin: 15px;
-      font-size: 30px;
+      font-size: 20px;
       color: #ff3385;
       text-decoration: none;
     }
+
     a:hover { color: #ff66b2; }
-    footer { margin-top: 50px; font-size: 18px; color: #555; }
+
+    footer {
+      font-size: 16px;
+      color: #555;
+      margin-top: 200px; /* pushes footer down */
+    }
+
+    /* Emoji animation */
+    .emoji {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity:1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity:0; }
+    }
   </style>
 </head>
 <body>
+
   <h1>HAPPY BOYFRIEND DAY 💖</h1>
   <p>Celebrating all the little moments we share together! 💗</p>
 
@@ -35,5 +73,21 @@
   <footer>
     Made by [Your Name] with love for [Boyfriend’s Name] 💖
   </footer>
+
+  <script>
+    // Floating emojis
+    const emojis = ["💖","✨","🌸","💌","🖥️","🕹️","🎮","🖱️"];
+    function createEmoji() {
+      const emoji = document.createElement("div");
+      emoji.className = "emoji";
+      emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.fontSize = (15 + Math.random() * 30) + "px";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 6000);
+    }
+    setInterval(createEmoji, 600);
+  </script>
+
 </body>
 </html>
