@@ -5,188 +5,35 @@
   <title>Happy Boyfriend Day 💖</title>
   <style>
     body {
-      background-color: #e0f7ff; /* lighter baby blue */
+      background-color: #e0f7ff;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       text-align: center;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
+      padding-top: 50px;
     }
-    h1 {
-      font-size: 60px;
-      color: #ff4da6;
-      margin-top: 30px;
-      text-shadow: 2px 2px #fff;
-    }
-    h2 {
+    h1 { font-size: 60px; color: #ff4da6; text-shadow: 2px 2px #fff; }
+    p { font-size: 24px; color: #333; margin: 20px 0; }
+    a {
+      display: block;
+      margin: 15px;
+      font-size: 30px;
       color: #ff3385;
-      margin-top: 50px;
-      font-size: 35px;
+      text-decoration: none;
     }
-    p {
-      font-size: 20px;
-      color: #333;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px;
-    }
-    .gallery img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-    }
-    #surpriseBtn {
-      background-color: #ff66b2;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 22px;
-      border-radius: 30px;
-      cursor: pointer;
-      margin: 40px 0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    #surpriseBtn:hover {
-      background-color: #ff3385;
-    }
-    #surprisePic {
-      margin-top: 20px;
-      display: none;
-    }
-    #surprisePic img {
-      width: 300px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-      animation: pop 0.8s;
-    }
-    @keyframes pop {
-      from {transform: scale(0.5); opacity: 0;}
-      to {transform: scale(1); opacity: 1;}
-    }
-    /* floating hearts */
-    .heart {
-      position: fixed;
-      bottom: -10px;
-      color: #ff4da6;
-      font-size: 25px;
-      animation: floatUp 6s linear infinite;
-    }
-    @keyframes floatUp {
-      from {transform: translateY(0) scale(1); opacity: 1;}
-      to {transform: translateY(-100vh) scale(1.5); opacity: 0;}
-    }
+    a:hover { color: #ff66b2; }
+    footer { margin-top: 50px; font-size: 18px; color: #555; }
   </style>
 </head>
 <body>
-
   <h1>HAPPY BOYFRIEND DAY 💖</h1>
+  <p>Celebrating all the little moments we share together! 💗</p>
 
-  <!-- Section 1 -->
-  <h2>Our Cute Dates 💗</h2>
-  <div class="gallery">
-    <img src="Udit-s-Surprise/date 1.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%201.JPG" alt="Date 1">
-    <img src="Udit-s-Surprise/date 2.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%202.JPG" alt="Date 2">
-    <img src="Udit-s-Surprise/date 3.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%203.JPG" alt="Date 3">
-    <img src="Udit-s-Surprise/date 4.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%204.JPG" alt="Date 4">
-    <img src="Udit-s-Surprise/date 5.jpg at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%205.jpg" alt="Date 5">
-    <img src="Udit-s-Surprise/date 6.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%206.JPG" alt="Date 6">
-    <img src="Udit-s-Surprise/date 7.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%207.JPG" alt="Date 7">
-    <img src="Udit-s-Surprise/date 8.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%208.JPG" alt="Date 8">
-    <img src="Udit-s-Surprise/date 9.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%209.JPG" alt="Date 9">
-    <img src="Udit-s-Surprise/date 10.JPG at main · sanjucodes1206/Udit-s-Surprise
-https://github.com/sanjucodes1206/Udit-s-Surprise/blob/main/date%2010.JPG" alt="Date 10">
-  </div>
+  <p>Click a scrapbook to see our memories:</p>
+  <a href="scrapbook1/">Our Cute Dates 💗</a>
+  <a href="scrapbook2/">My Pookilicious 😋</a>
+  <a href="scrapbook3/">Rasathiii 🥰</a>
 
-  <!-- Section 2 -->
-  <h2>My Pookilicious 😋</h2>
-  <div class="gallery">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 1">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 2">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 3">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 4">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 5">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 6">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 7">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 8">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 9">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Pookilicious 10">
-  </div>
-
-  <!-- Section 3 -->
-  <h2>Rasathiii 🥰</h2>
-  <div class="gallery">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 1">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 2">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 3">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 4">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 5">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 6">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 7">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 8">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 9">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Rasathiii 10">
-  </div>
-
-  <!-- Surprise Button -->
-  <button id="surpriseBtn">Click me for a surprise 💌</button>
-  <div id="surprisePic"></div>
-
-  <script>
-    // floating hearts generator
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "💖";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (20 + Math.random() * 30) + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-    setInterval(createHeart, 800);
-
-    // surprise button logic
-    const surprisePics = [
-      "YOUR_RANDOM_IMAGE_1",
-      "YOUR_RANDOM_IMAGE_2",
-      "YOUR_RANDOM_IMAGE_3",
-      "YOUR_RANDOM_IMAGE_4",
-      "YOUR_RANDOM_IMAGE_5",
-      "YOUR_RANDOM_IMAGE_6",
-      "YOUR_RANDOM_IMAGE_7",
-      "YOUR_RANDOM_IMAGE_8",
-      "YOUR_RANDOM_IMAGE_9",
-      "YOUR_RANDOM_IMAGE_10",
-      // add all 30 random photo links here
-    ];
-
-    const btn = document.getElementById("surpriseBtn");
-    const surpriseDiv = document.getElementById("surprisePic");
-
-    btn.addEventListener("click", () => {
-      const randomPic = surprisePics[Math.floor(Math.random() * surprisePics.length)];
-      surpriseDiv.innerHTML = `<img src="${randomPic}" alt="Surprise">`;
-      surpriseDiv.style.display = "block";
-    });
-  </script>
-
+  <footer>
+    Made by [Your Name] with love for [Boyfriend’s Name] 💖
+  </footer>
 </body>
 </html>
