@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Pookilicious 😋</title>
+  <style>
+    body {
+      background-color: #e0f7ff;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1 { font-size: 50px; color: #ff4da6; margin-top: 20px; }
+    .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 20px; }
+    .gallery img { width: 200px; height: 200px; object-fit: cover; border-radius: 15px; transition: transform 0.3s; }
+    .gallery img:hover { transform: scale(1.1); }
+    #surpriseBtn { background-color: #ff66b2; color: white; border: none; padding: 15px 30px; font-size: 22px; border-radius: 30px; cursor: pointer; margin: 20px; }
+    #surpriseBtn:hover { background-color: #ff3385; }
+    #surprisePic img { width: 300px; border-radius: 20px; margin-top: 10px; }
+    nav a { margin: 10px; font-size: 20px; color: #ff3385; text-decoration: none; }
+    nav a:hover { color: #ff66b2; }
+    .heart { position: fixed; bottom: -10px; color: #ff4da6; font-size: 25px; animation: floatUp 6s linear infinite; }
+    @keyframes floatUp { from {transform: translateY(0) scale(1); opacity:1;} to {transform: translateY(-100vh) scale(1.5); opacity:0;} }
+  </style>
+</head>
+<body>
+
+  <h1>Our Cute Dates 💗</h1>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../">Home</a> |
+    <a href="../scrapbook1/">Our Cute Dates 💗</a> |
+    <a href="../scrapbook3/">Rasathiii 🥰</a>
+  </nav>
+
+  <!-- Gallery of 10 photos -->
+  <div class="gallery">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+    <img src="YOUR_IMAGE_LINK_HERE">
+  </div>
+
+  <!-- Surprise Button -->
+  <button id="surpriseBtn">Click me for a surprise 💌</button>
+  <div id="surprisePic"></div>
+
+  <script>
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (20 + Math.random() * 30) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 800);
+
+    // Surprise button
+    const surprisePics = [
+      "YOUR_RANDOM_IMAGE_1",
+      "YOUR_RANDOM_IMAGE_2",
+      "YOUR_RANDOM_IMAGE_3",
+      "YOUR_RANDOM_IMAGE_4",
+      "YOUR_RANDOM_IMAGE_5"
+    ];
+
+    const btn = document.getElementById("surpriseBtn");
+    const surpriseDiv = document.getElementById("surprisePic");
+
+    btn.addEventListener("click", () => {
+      const randomPic = surprisePics[Math.floor(Math.random() * surprisePics.length)];
+      surpriseDiv.innerHTML = `<img src="${randomPic}">`;
+    });
+  </script>
+
+</body>
+</html>
