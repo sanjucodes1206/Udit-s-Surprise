@@ -101,11 +101,7 @@ a:hover {
   <a href="scrapbook3/">Rasathiii 🥰</a>
 </div>
 
-  <footer>
-    Made by Sanju with love for Udit 🥰
-  </footer>
-  
-<button id="surpriseBtn" style="
+  <button id="surpriseBtn" style="
   margin-top: 30px; 
   padding: 12px 25px; 
   font-size: 20px; 
@@ -119,23 +115,7 @@ a:hover {
   🎁 Click me for a surprise
 </button>
 
-<div id="surpriseBox" style="margin-top: 20px;"></div>
-
   <script>
-    // Floating emojis
-    const emojis = ["💖","✨","🌸","💌","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","🕹️","🐟","🖱️"];
-    function createEmoji() {
-      const emoji = document.createElement("div");
-      emoji.className = "emoji";
-      emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-      emoji.style.left = Math.random() * 100 + "vw";
-      emoji.style.fontSize = (15 + Math.random() * 30) + "px";
-      document.body.appendChild(emoji);
-      setTimeout(() => emoji.remove(), 6000);
-    }
-    setInterval(createEmoji, 600);
-  </script>
-<script>
 const surprisePhotos = [
   "https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/surprise1.jpg",
   "https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/surprise2.jpg",
@@ -151,6 +131,28 @@ btn.addEventListener("click", () => {
   box.innerHTML = `<img src="${randomImage}" style="max-width:80%; border-radius:15px; margin-top:20px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">`;
 });
 </script>
+
+<div id="surpriseBox" style="margin-top: 20px;"></div>
+  
+  <footer>
+    Made by Sanju with love for Udit 🥰
+  </footer>
+  
+  <script>
+    // Floating emojis
+    const emojis = ["💖","✨","🌸","💌","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","🕹️","🐟","🖱️"];
+    function createEmoji() {
+      const emoji = document.createElement("div");
+      emoji.className = "emoji";
+      emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.fontSize = (15 + Math.random() * 30) + "px";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 6000);
+    }
+    setInterval(createEmoji, 600);
+  </script>
+
 
 </body>
 </html>
