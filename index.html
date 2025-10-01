@@ -62,20 +62,30 @@ a:hover {
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   filter: brightness(1.1);
 }
-
+.container {
+  max-width: 900px; /* limits width on large screens */
+  margin: 0 auto;   /* centers horizontally */
+  padding: 0 20px;  /* adds space on small screens */
+  position: relative; /* needed for emoji alignment */
+}
 
     /* Emoji animation */
     .emoji {
-      position: fixed;
-      bottom: -20px;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-    }
+  position: absolute; /* float inside container */
+  bottom: 0;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+  pointer-events: none; /* so you can still click buttons */
+}
 
     @keyframes floatUp {
       0% { transform: translateY(0) scale(1); opacity:1; }
       100% { transform: translateY(-100vh) scale(1.5); opacity:0; }
     }
+    .scrapbook-section {
+  margin-bottom: 150px; /* adds space before footer */
+}
+
     .scrapbook-links {
   margin-bottom: 120px; /* pushes footer further down */
 }
@@ -83,7 +93,7 @@ a:hover {
   </style>
 </head>
 <body>
-
+<div class="container">
   <h1>HAPPY BOYFRIEND'S DAY UDIT 😘</h1>
 
   <p>i love you pattuma-- romba rombaaa rombaaaa 💗</p>
@@ -94,16 +104,18 @@ a:hover {
           margin: 40px 0 20px;">
   📖 Click a scrapbook to see our memories:
 </p>
-
-<div class="scrapbook-links">
-  <a href="scrapbook1/">Our Cute Dates 💗</a>
-  <a href="scrapbook2/">My Pookilicious 😋</a>
-  <a href="scrapbook3/">Rasathiii 🥰</a>
+  <div class="scrapbook-section">
+  <div class="scrapbook-links">
+    <a href="scrapbook1/">Our Cute Dates 💗</a>
+    <a href="scrapbook2/">My Pookilicious 😋</a>
+    <a href="scrapbook3/">Rasathiii 🥰</a>
+  </div
 </div>
 
   <button id="surpriseBtn">Click me for a surprise 😗</button>
 <div id="surpriseBox"></div>
-  
+  </div>
+    
 <style>#surpriseBtn {
   display: inline-block;
   margin: 15px;
