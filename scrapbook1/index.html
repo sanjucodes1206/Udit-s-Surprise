@@ -39,7 +39,7 @@
   }
 
   .polaroid {
-    position: relative;
+    position: relative; /* for stickers */
     width: 200px;
     background: #fff;
     padding: 10px 10px 30px 10px;
@@ -101,16 +101,17 @@
   <h1>Our Cute Dates 💗</h1>
 
   <div class="gallery" id="gallery">
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%206.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%202.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%209.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%207.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%208.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%2010.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%201.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%203.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%204.JPG" alt=""></div>
-    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/refs/heads/main/date%205.jpg" alt=""></div>
+    <!-- 10 polaroid photos -->
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%201.JPG" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%202.JPG" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%203.JPG" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%204.JPG" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%205.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%206.JPG" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%207.JPG" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%208.JPG" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%209.JPG" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/sanjucodes1206/Udit-s-Surprise/main/date%2010.JPG" alt=""></div>
   </div>
 </div>
 
@@ -119,39 +120,32 @@
 </footer>
 
 <script>
+  // Floating emojis over page
   const emojis = ["💖","✨","🌸","💌","🌻","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","💛","🕹️","🐟"];
   function createEmoji() {
     const emoji = document.createElement("div");
     emoji.className = "emoji";
     emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
     emoji.style.left = Math.random() * 80 + "vw";
-    emoji.style.fontSize = (15 + Math.random() * 30) + "px";
+    emoji.style.fontSize = (15 + Math.random() * 25) + "px";
     document.body.appendChild(emoji);
     setTimeout(() => emoji.remove(), 6000);
   }
-  setInterval(createEmoji, 600);
+  setInterval(createEmoji, 800); // slower so no glitch
 
-  // Stickers random placement, rotation, and jiggle
+  // Stickers on polaroids
   const stickerEmojis = ["💖","✨","🌸","💌","🌻","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","💛","🕹️","🐟"];
   const corners = ["top:5px;left:5px;","top:5px;right:5px;","bottom:5px;left:10px;","bottom:5px;right:10px;"];
 
   document.querySelectorAll(".polaroid").forEach(polaroid => {
-    const sticker1 = document.createElement("div");
-    const sticker2 = document.createElement("div");
-    sticker1.className = "sticker";
-    sticker2.className = "sticker";
-
-    sticker1.innerHTML = stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
-    sticker2.innerHTML = stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
-
-    const corner1 = corners[Math.floor(Math.random()*corners.length)];
-    const corner2 = corners[Math.floor(Math.random()*corners.length)];
-
-    sticker1.style.cssText = corner1 + `--angle:${Math.floor(Math.random()*30-15)}deg;`;
-    sticker2.style.cssText = corner2 + `--angle:${Math.floor(Math.random()*30-15)}deg;`;
-
-    polaroid.appendChild(sticker1);
-    polaroid.appendChild(sticker2);
+    for (let i = 0; i < 2; i++) { // 2 stickers per polaroid
+      const sticker = document.createElement("div");
+      sticker.className = "sticker";
+      sticker.innerHTML = stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
+      const corner = corners[Math.floor(Math.random()*corners.length)];
+      sticker.style.cssText = corner + `--angle:${Math.floor(Math.random()*30-15)}deg; font-size:${18+Math.random()*12}px;`;
+      polaroid.appendChild(sticker);
+    }
   });
 </script>
 
