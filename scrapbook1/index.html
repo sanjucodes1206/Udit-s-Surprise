@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Our Cute Dates 💗</title>
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
   <style>
@@ -30,7 +29,6 @@
       color: #ff4da6;
       text-shadow: 2px 2px #fff;
       margin-top: 30px;
-      font-family: 'Press Start 2P', cursive;
     }
 
     .gallery {
@@ -69,11 +67,6 @@
       pointer-events: none;
     }
 
-    .sticker1 { top: 5px; left: 5px; }
-    .sticker2 { top: 5px; right: 5px; }
-    .sticker3 { bottom: 5px; left: 10px; }
-    .sticker4 { bottom: 5px; right: 10px; }
-
     .emoji {
       position: absolute;
       bottom: 0;
@@ -101,66 +94,18 @@
   <div class="container">
     <h1>Our Cute Dates 💗</h1>
 
-    <div class="gallery">
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo1.jpg" alt="">
-        <div class="sticker sticker1">💖</div>
-        <div class="sticker sticker2">🌸</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo2.jpg" alt="">
-        <div class="sticker sticker3">✨</div>
-        <div class="sticker sticker4">💌</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo3.jpg" alt="">
-        <div class="sticker sticker1">❤️</div>
-        <div class="sticker sticker4">🫶🏻</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo4.jpg" alt="">
-        <div class="sticker sticker2">💛</div>
-        <div class="sticker sticker3">🌻</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo5.jpg" alt="">
-        <div class="sticker sticker1">💖</div>
-        <div class="sticker sticker4">✨</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo6.jpg" alt="">
-        <div class="sticker sticker2">🌸</div>
-        <div class="sticker sticker3">💌</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo7.jpg" alt="">
-        <div class="sticker sticker1">❤️</div>
-        <div class="sticker sticker2">🫶🏻</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo8.jpg" alt="">
-        <div class="sticker sticker3">💖</div>
-        <div class="sticker sticker4">🌸</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo9.jpg" alt="">
-        <div class="sticker sticker1">✨</div>
-        <div class="sticker sticker4">💌</div>
-      </div>
-
-      <div class="polaroid">
-        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo10.jpg" alt="">
-        <div class="sticker sticker2">💖</div>
-        <div class="sticker sticker3">🌻</div>
-      </div>
+    <div class="gallery" id="gallery">
+      <!-- 10 polaroids -->
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo1.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo2.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo3.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo4.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo5.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo6.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo7.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo8.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo9.jpg" alt=""></div>
+      <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo10.jpg" alt=""></div>
     </div>
   </div>
 
@@ -169,8 +114,9 @@
   </footer>
 
   <script>
-    // Floating emojis
     const emojis = ["💖","✨","🌸","💌","🌻","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","💛","🕹️","🐟"];
+
+    // Floating emojis
     function createEmoji() {
       const emoji = document.createElement("div");
       emoji.className = "emoji";
@@ -181,6 +127,25 @@
       setTimeout(() => emoji.remove(), 6000);
     }
     setInterval(createEmoji, 600);
+
+    // Stickers random placement and rotation
+    const stickerEmojis = ["💖","✨","🌸","💌","🌻","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","💛","🕹️","🐟"];
+    const corners = ["top:5px;left:5px;", "top:5px;right:5px;", "bottom:5px;left:10px;", "bottom:5px;right:10px;"];
+
+    document.querySelectorAll(".polaroid").forEach(polaroid => {
+      const sticker1 = document.createElement("div");
+      const sticker2 = document.createElement("div");
+      sticker1.className = "sticker";
+      sticker2.className = "sticker";
+      // random emoji
+      sticker1.innerHTML = stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
+      sticker2.innerHTML = stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
+      // random corner
+      sticker1.style.cssText = corners[Math.floor(Math.random()*corners.length)] + `transform: rotate(${Math.floor(Math.random()*30-15)}deg);`;
+      sticker2.style.cssText = corners[Math.floor(Math.random()*corners.length)] + `transform: rotate(${Math.floor(Math.random()*30-15)}deg);`;
+      polaroid.appendChild(sticker1);
+      polaroid.appendChild(sticker2);
+    });
   </script>
 
 </body>
