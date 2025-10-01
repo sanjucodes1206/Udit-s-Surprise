@@ -3,86 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <title>Our Cute Dates 💗</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
   <style>
+    /* Page background and body */
     body {
-      background-color: #e0f7ff;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(120deg, #c0f0ff, #e0f7ff);
+      font-family: 'Press Start 2P', cursive;
       text-align: center;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      position: relative;
       overflow-x: hidden;
     }
-    h1 { font-size: 50px; color: #ff4da6; margin-top: 20px; }
-    .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 20px; }
-    .gallery img { width: 200px; height: 200px; object-fit: cover; border-radius: 15px; transition: transform 0.3s; }
-    .gallery img:hover { transform: scale(1.1); }
-    #surpriseBtn { background-color: #ff66b2; color: white; border: none; padding: 15px 30px; font-size: 22px; border-radius: 30px; cursor: pointer; margin: 20px; }
-    #surpriseBtn:hover { background-color: #ff3385; }
-    #surprisePic img { width: 300px; border-radius: 20px; margin-top: 10px; }
-    nav a { margin: 10px; font-size: 20px; color: #ff3385; text-decoration: none; }
-    nav a:hover { color: #ff66b2; }
-    .heart { position: fixed; bottom: -10px; color: #ff4da6; font-size: 25px; animation: floatUp 6s linear infinite; }
-    @keyframes floatUp { from {transform: translateY(0) scale(1); opacity:1;} to {transform: translateY(-100vh) scale(1.5); opacity:0;} }
+
+    /* Container for centering content */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Page heading */
+    h1 {
+      font-size: 50px;
+      color: #ff4da6;
+      text-shadow: 2px 2px #fff;
+      margin-top: 30px;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    /* Gallery container */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    /* Gallery images */
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Floating emojis */
+    .emoji {
+      position: absolute;
+      bottom: 0;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity:1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity:0; }
+    }
+
+    /* Footer */
+    footer {
+      font-family: 'Dancing Script', cursive;
+      font-size: 18px;
+      color: #ff4da6;
+      text-align: center;
+      margin-top: 60px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Our Cute Dates 💗</h1>
+  <div class="container">
+    <h1>Our Cute Dates 💗</h1>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="../">Home</a> |
-    <a href="../scrapbook2/">My Pookilicious 😋</a> |
-    <a href="../scrapbook3/">Rasathiii 🥰</a>
-  </nav>
+    <div class="gallery">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo1.jpg" alt="Photo 1">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo2.jpg" alt="Photo 2">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo3.jpg" alt="Photo 3">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo4.jpg" alt="Photo 4">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo5.jpg" alt="Photo 5">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo6.jpg" alt="Photo 6">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo7.jpg" alt="Photo 7">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo8.jpg" alt="Photo 8">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo9.jpg" alt="Photo 9">
+      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo10.jpg" alt="Photo 10">
+    </div>
 
-  <!-- Gallery of 10 photos -->
-  <div class="gallery">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
   </div>
 
-  <!-- Surprise Button -->
-  <button id="surpriseBtn">Click me for a surprise 💌</button>
-  <div id="surprisePic"></div>
+  <footer>
+    Made with 💖
+  </footer>
 
   <script>
-    // Floating hearts
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "💖";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (20 + Math.random() * 30) + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
+    // Floating emojis
+    const emojis = ["💖","✨","🌸","💌","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","🕹️","🐟","🖱️"];
+    function createEmoji() {
+      const emoji = document.createElement("div");
+      emoji.className = "emoji";
+      emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 80 + "vw";
+      emoji.style.fontSize = (15 + Math.random() * 30) + "px";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 6000);
     }
-    setInterval(createHeart, 800);
-
-    // Surprise button
-    const surprisePics = [
-      "YOUR_RANDOM_IMAGE_1",
-      "YOUR_RANDOM_IMAGE_2",
-      "YOUR_RANDOM_IMAGE_3",
-      "YOUR_RANDOM_IMAGE_4",
-      "YOUR_RANDOM_IMAGE_5"
-    ];
-
-    const btn = document.getElementById("surpriseBtn");
-    const surpriseDiv = document.getElementById("surprisePic");
-
-    btn.addEventListener("click", () => {
-      const randomPic = surprisePics[Math.floor(Math.random() * surprisePics.length)];
-      surpriseDiv.innerHTML = `<img src="${randomPic}">`;
-    });
+    setInterval(createEmoji, 600);
   </script>
 
 </body>
