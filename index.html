@@ -130,51 +130,6 @@ a:hover {
     <a href="scrapbook3/">Rasathiii 🥰</a>
   </div
 </div>
-
-  <button id="surpriseBtn">Click me for a surprise 😗</button>
-<div id="surpriseBox"></div>
-  </div>
-    
-<style>
-  #surprise-box {
-  background-color: #A8E6CF; /* pastel mint green */
-  color: #ffffff;             /* text color */
-  padding: 15px 40px;         /* wider padding for bigger box */
-  border-radius: 12px;
-  font-size: 22px;            /* slightly bigger text */
-  font-family: 'Dancing Script', cursive;
-  cursor: pointer;
-  display: inline-block;
-  min-width: 250px;           /* ensures the box doesn't shrink too small */
-  text-align: center;
-  margin: 20px auto;
-  transition: transform 0.2s;
-}
-
-#surprise-box:hover {
-  transform: scale(1.05);
-}
-
-</style>
-
-  <script>
-const surprisePhotos = [
-  "https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/surprise1.jpg",
-  "https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/surprise2.jpg",
-  "https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/surprise3.jpg"
-  // add more links as needed
-];
-
-const btn = document.getElementById("surpriseBtn");
-const box = document.getElementById("surpriseBox");
-
-btn.addEventListener("click", () => {
-  const randomImage = surprisePhotos[Math.floor(Math.random() * surprisePhotos.length)];
-  box.innerHTML = `<img src="${randomImage}" style="max-width:80%; border-radius:15px; margin-top:20px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">`;
-});
-</script>
-
-<div id="surpriseBox" style="margin-top: 20px;"></div>
   
   <footer>
     Made by Sanju with love for Udit 🥰
