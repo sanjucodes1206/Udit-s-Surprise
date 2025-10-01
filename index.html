@@ -104,6 +104,22 @@ a:hover {
   <footer>
     Made by Sanju with love for Udit 🥰
   </footer>
+  
+<button id="surpriseBtn" style="
+  margin-top: 30px; 
+  padding: 12px 25px; 
+  font-size: 20px; 
+  background: #ff80b3; 
+  color: white; 
+  border: none; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+">
+  🎁 Click me for a surprise
+</button>
+
+<div id="surpriseBox" style="margin-top: 20px;"></div>
 
   <script>
     // Floating emojis
@@ -119,19 +135,21 @@ a:hover {
     }
     setInterval(createEmoji, 600);
   </script>
-  
 <script>
-  function showSurprise() {
-    const photos = [
-      "images/surprise1.jpg",
-      "images/surprise2.jpg",
-      "images/surprise3.jpg"
-      // add more surprise images here
-    ];
-    const randomPhoto = photos[Math.floor(Math.random() * photos.length)];
-    document.getElementById("surprise-box").innerHTML = 
-      `<img src="${randomPhoto}" style="max-width:80%; border-radius:15px; margin-top:20px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">`;
-  }
+const surprisePhotos = [
+  "https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/surprise1.jpg",
+  "https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/surprise2.jpg",
+  "https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/surprise3.jpg"
+  // add more links as needed
+];
+
+const btn = document.getElementById("surpriseBtn");
+const box = document.getElementById("surpriseBox");
+
+btn.addEventListener("click", () => {
+  const randomImage = surprisePhotos[Math.floor(Math.random() * surprisePhotos.length)];
+  box.innerHTML = `<img src="${randomImage}" style="max-width:80%; border-radius:15px; margin-top:20px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">`;
+});
 </script>
 
 </body>
