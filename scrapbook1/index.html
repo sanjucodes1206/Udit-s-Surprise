@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
   <style>
-    /* Page background and body */
     body {
       background: linear-gradient(120deg, #c0f0ff, #e0f7ff);
       font-family: 'Press Start 2P', cursive;
@@ -19,7 +18,6 @@
       overflow-x: hidden;
     }
 
-    /* Container for centering content */
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -27,7 +25,6 @@
       position: relative;
     }
 
-    /* Page heading */
     h1 {
       font-size: 50px;
       color: #ff4da6;
@@ -36,31 +33,51 @@
       font-family: 'Press Start 2P', cursive;
     }
 
-    /* Gallery container */
+    /* Gallery grid */
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
       margin-top: 30px;
     }
 
-    /* Gallery images */
-    .gallery img {
+    /* Polaroid style frame */
+    .polaroid {
+      position: relative;
       width: 200px;
+      background: #fff;
+      padding: 10px 10px 30px 10px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .polaroid img {
+      width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
     }
 
-    .gallery img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    .polaroid:hover {
+      transform: rotate(-2deg) scale(1.05);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.3);
     }
 
-    /* Floating emojis */
+    /* Sticker emojis on photos */
+    .sticker {
+      position: absolute;
+      font-size: 24px;
+      pointer-events: none;
+    }
+
+    .sticker1 { top: 5px; left: 5px; }
+    .sticker2 { top: 5px; right: 5px; }
+    .sticker3 { bottom: 5px; left: 10px; }
+    .sticker4 { bottom: 5px; right: 10px; }
+
+    /* Floating emojis on page */
     .emoji {
       position: absolute;
       bottom: 0;
@@ -74,7 +91,6 @@
       100% { transform: translateY(-100vh) scale(1.5); opacity:0; }
     }
 
-    /* Footer */
     footer {
       font-family: 'Dancing Script', cursive;
       font-size: 18px;
@@ -90,18 +106,26 @@
     <h1>Our Cute Dates 💗</h1>
 
     <div class="gallery">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo1.jpg" alt="Photo 1">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo2.jpg" alt="Photo 2">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo3.jpg" alt="Photo 3">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo4.jpg" alt="Photo 4">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo5.jpg" alt="Photo 5">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo6.jpg" alt="Photo 6">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo7.jpg" alt="Photo 7">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo8.jpg" alt="Photo 8">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo9.jpg" alt="Photo 9">
-      <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo10.jpg" alt="Photo 10">
-    </div>
+      <div class="polaroid">
+        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo1.jpg" alt="">
+        <div class="sticker sticker1">💖</div>
+        <div class="sticker sticker2">🌸</div>
+      </div>
 
+      <div class="polaroid">
+        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo2.jpg" alt="">
+        <div class="sticker sticker3">✨</div>
+        <div class="sticker sticker4">💌</div>
+      </div>
+
+      <div class="polaroid">
+        <img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo3.jpg" alt="">
+        <div class="sticker sticker1">❤️</div>
+        <div class="sticker sticker4">🫶🏻</div>
+      </div>
+
+      <!-- Add more polaroid blocks for remaining photos -->
+    </div>
   </div>
 
   <footer>
