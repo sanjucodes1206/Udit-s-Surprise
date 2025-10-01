@@ -101,6 +101,19 @@ a:hover {
   <a href="scrapbook3/">Rasathiii 🥰</a>
 </div>
 
+<script>
+  function showSurprise() {
+    const photos = [
+      "images/surprise1.jpg",
+      "images/surprise2.jpg",
+      "images/surprise3.jpg"
+      // add more surprise images here
+    ];
+    const randomPhoto = photos[Math.floor(Math.random() * photos.length)];
+    document.getElementById("surprise-box").innerHTML = 
+      `<img src="${randomPhoto}" style="max-width:80%; border-radius:15px; margin-top:20px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">`;
+  }
+</script>
 
   <footer>
     Made by Sanju with love for Udit 🥰
