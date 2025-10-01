@@ -135,17 +135,19 @@ a:hover {
 <div id="surpriseBox"></div>
   </div>
     
-<style>#surprise-box {
+<style>
+  #surprise-box {
   background-color: #A8E6CF; /* pastel mint green */
   color: #ffffff;             /* text color */
-  padding: 15px 25px;
+  padding: 15px 40px;         /* wider padding for bigger box */
   border-radius: 12px;
-  font-size: 20px;
+  font-size: 22px;            /* slightly bigger text */
   font-family: 'Dancing Script', cursive;
   cursor: pointer;
   display: inline-block;
-  margin: 20px auto;
+  min-width: 250px;           /* ensures the box doesn't shrink too small */
   text-align: center;
+  margin: 20px auto;
   transition: transform 0.2s;
 }
 
