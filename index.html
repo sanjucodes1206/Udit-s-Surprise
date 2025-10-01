@@ -32,21 +32,37 @@
       margin: 20px 0;
     }
 
-    a {
-      display: block;
-      margin: 15px;
-      font-size: 20px;
-      color: #ff3385;
-      text-decoration: none;
-    }
+    /* Scrapbook buttons - different pastel colors */
+a {
+  display: inline-block;
+  margin: 15px;
+  padding: 14px 28px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
 
-    a:hover { color: #ff66b2; }
+/* Each scrapbook button has a unique pastel background */
+a:nth-of-type(1) {
+  background: #ffb6c1; /* pastel pink */
+}
+a:nth-of-type(2) {
+  background: #cdb4db; /* pastel purple */
+}
+a:nth-of-type(3) {
+  background: #a2d2ff; /* pastel blue */
+}
 
-    footer {
-      font-size: 16px;
-      color: #555;
-      margin-top: 200px; /* pushes footer down */
-    }
+/* Hover effect - brighten + grow */
+a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  filter: brightness(1.1);
+}
+
 
     /* Emoji animation */
     .emoji {
