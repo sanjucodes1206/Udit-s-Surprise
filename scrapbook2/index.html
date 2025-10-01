@@ -1,89 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Pookilicious 😋</title>
-  <style>
-    body {
-      background-color: #e0f7ff;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    h1 { font-size: 50px; color: #ff4da6; margin-top: 20px; }
-    .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 20px; }
-    .gallery img { width: 200px; height: 200px; object-fit: cover; border-radius: 15px; transition: transform 0.3s; }
-    .gallery img:hover { transform: scale(1.1); }
-    #surpriseBtn { background-color: #ff66b2; color: white; border: none; padding: 15px 30px; font-size: 22px; border-radius: 30px; cursor: pointer; margin: 20px; }
-    #surpriseBtn:hover { background-color: #ff3385; }
-    #surprisePic img { width: 300px; border-radius: 20px; margin-top: 10px; }
-    nav a { margin: 10px; font-size: 20px; color: #ff3385; text-decoration: none; }
-    nav a:hover { color: #ff66b2; }
-    .heart { position: fixed; bottom: -10px; color: #ff4da6; font-size: 25px; animation: floatUp 6s linear infinite; }
-    @keyframes floatUp { from {transform: translateY(0) scale(1); opacity:1;} to {transform: translateY(-100vh) scale(1.5); opacity:0;} }
-  </style>
+<meta charset="UTF-8">
+<title>My Pookilicious 😋</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+  body {
+    background: #D8B0FF; /* pastel purple */
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .container { max-width: 900px; margin:0 auto; padding:20px; }
+  h1 { font-size:50px; color:#ff4da6; text-shadow:2px 2px #fff; margin-top:30px; }
+  .gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px; }
+  .polaroid { position:relative; width:200px; background:#fff; padding:10px 10px 30px 10px; border-radius:10px; box-shadow:0 8px 16px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; }
+  .polaroid img { width:100%; height:200px; object-fit:cover; border-radius:5px; }
+  .polaroid:hover { transform:rotate(-2deg) scale(1.05); box-shadow:0 12px 20px rgba(0,0,0,0.3); }
+  .sticker { position:absolute; font-size:24px; pointer-events:none; animation:jiggle 2s ease-in-out infinite alternate; }
+  @keyframes jiggle { 0% { transform:rotate(var(--angle)) translateX(0px) translateY(0px); } 50% { transform:rotate(var(--angle)) translateX(2px) translateY(-2px); } 100% { transform:rotate(var(--angle)) translateX(-2px) translateY(2px); } }
+  .emoji { position:absolute; bottom:0; font-size:20px; animation:floatUp 6s linear infinite; pointer-events:none; }
+  @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity:1; } 100% { transform: translateY(-100vh) scale(1.5); opacity:0; } }
+  footer { font-family:'Dancing Script', cursive; font-size:18px; color:#ff4da6; text-align:center; margin-top:60px; }
+</style>
 </head>
 <body>
 
-  <h1>Our Cute Dates 💗</h1>
-
-  <!-- Navigation -->
-  <nav>
-    <a href="../">Home</a> |
-    <a href="../scrapbook1/">Our Cute Dates 💗</a> |
-    <a href="../scrapbook3/">Rasathiii 🥰</a>
-  </nav>
-
-  <!-- Gallery of 10 photos -->
-  <div class="gallery">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
-    <img src="YOUR_IMAGE_LINK_HERE">
+<div class="container">
+  <h1>My Pookilicious 😋</h1>
+  <div class="gallery" id="gallery">
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo1.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo2.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo3.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo4.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo5.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo6.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo7.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo8.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo9.jpg" alt=""></div>
+    <div class="polaroid"><img src="https://raw.githubusercontent.com/YourUsername/YourRepo/main/images/photo10.jpg" alt=""></div>
   </div>
+</div>
 
-  <!-- Surprise Button -->
-  <button id="surpriseBtn">Click me for a surprise 💌</button>
-  <div id="surprisePic"></div>
+<footer>Made by Sanju with 💖 for Udit</footer>
 
-  <script>
-    // Floating hearts
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "💖";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (20 + Math.random() * 30) + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-    setInterval(createHeart, 800);
+<script>
+const emojis = ["💖","✨","🌸","💌","🌻","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","💛","🕹️","🐟"];
+function createEmoji() {
+  const emoji = document.createElement("div");
+  emoji.className="emoji";
+  emoji.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+  emoji.style.left=Math.random()*80+"vw";
+  emoji.style.fontSize=(15+Math.random()*30)+"px";
+  document.body.appendChild(emoji);
+  setTimeout(()=>emoji.remove(),6000);
+}
+setInterval(createEmoji,600);
 
-    // Surprise button
-    const surprisePics = [
-      "YOUR_RANDOM_IMAGE_1",
-      "YOUR_RANDOM_IMAGE_2",
-      "YOUR_RANDOM_IMAGE_3",
-      "YOUR_RANDOM_IMAGE_4",
-      "YOUR_RANDOM_IMAGE_5"
-    ];
-
-    const btn = document.getElementById("surpriseBtn");
-    const surpriseDiv = document.getElementById("surprisePic");
-
-    btn.addEventListener("click", () => {
-      const randomPic = surprisePics[Math.floor(Math.random() * surprisePics.length)];
-      surpriseDiv.innerHTML = `<img src="${randomPic}">`;
-    });
-  </script>
-
+const stickerEmojis = ["💖","✨","🌸","💌","🌻","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","💛","🕹️","🐟"];
+const corners = ["top:5px;left:5px;","top:5px;right:5px;","bottom:5px;left:10px;","bottom:5px;right:10px;"];
+document.querySelectorAll(".polaroid").forEach(polaroid=>{
+  const sticker1=document.createElement("div");
+  const sticker2=document.createElement("div");
+  sticker1.className="sticker";
+  sticker2.className="sticker";
+  sticker1.innerHTML=stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
+  sticker2.innerHTML=stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
+  const corner1=corners[Math.floor(Math.random()*corners.length)];
+  const corner2=corners[Math.floor(Math.random()*corners.length)];
+  sticker1.style.cssText=corner1+`--angle:${Math.floor(Math.random()*30-15)}deg;`;
+  sticker2.style.cssText=corner2+`--angle:${Math.floor(Math.random()*30-15)}deg;`;
+  polaroid.appendChild(sticker1);
+  polaroid.appendChild(sticker2);
+});
+</script>
 </body>
 </html>
