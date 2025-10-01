@@ -133,20 +133,23 @@
   }
   setInterval(createEmoji, 800); // slower so no glitch
 
-  // Stickers on polaroids
-  const stickerEmojis = ["💖","✨","🌸","💌","🌻","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","💛","🕹️","😚","🐟"];
-  const corners = ["top:5px;left:5px;","top:5px;right:5px;","bottom:5px;left:10px;","bottom:5px;right:10px;"];
+  // Stickers on polaroids without overlapping corners
+const stickerEmojis = ["💖","✨","🌸","💌","🌻","❤️","🫶🏻","❤️‍🔥","🖥️","🐚","🎣","💛","🕹️","😚","🐟"];
+const corners = ["top:5px;left:5px;","top:5px;right:5px;","bottom:5px;left:10px;","bottom:5px;right:10px;"];
 
-  document.querySelectorAll(".polaroid").forEach(polaroid => {
-    for (let i = 0; i < 2; i++) { // 2 stickers per polaroid
-      const sticker = document.createElement("div");
-      sticker.className = "sticker";
-      sticker.innerHTML = stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
-      const corner = corners[Math.floor(Math.random()*corners.length)];
-      sticker.style.cssText = corner + `--angle:${Math.floor(Math.random()*30-15)}deg; font-size:${18+Math.random()*12}px;`;
-      polaroid.appendChild(sticker);
-    }
-  });
+document.querySelectorAll(".polaroid").forEach(polaroid => {
+  // shuffle corners so we can pick 2 unique ones
+  const shuffledCorners = corners.sort(() => 0.5 - Math.random());
+  for (let i = 0; i < 2; i++) { // 2 stickers per polaroid
+    const sticker = document.createElement("div");
+    sticker.className = "sticker";
+    sticker.innerHTML = stickerEmojis[Math.floor(Math.random()*stickerEmojis.length)];
+    const corner = shuffledCorners[i]; // guaranteed unique
+    sticker.style.cssText = corner + `--angle:${Math.floor(Math.random()*30-15)}deg; font-size:${18+Math.random()*12}px;`;
+    polaroid.appendChild(sticker);
+  }
+});
+
 </script>
 
 </body>
